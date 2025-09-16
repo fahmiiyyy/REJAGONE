@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejagone Haircut - Professional Barbershop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        /* Logo Container - Tempat untuk logo kamu */
+        .logo-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            /* Tempat logo kamu nanti */
+            width: 200px;
+            height: 80px;
+            background: #f1f2f6;
+            border: 2px dashed #bdc3c7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Uncomment this when you add your logo */
+        .logo {
+            max-width: 200px;
+            height: auto;
+            display: block;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .header .tagline {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid #bdc3c7;
+        }
+
+        /* Services Section */
+        .services {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .service-item .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 8px;
+        }
+
+        .service-item p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .info-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Booking Form */
+        .booking-section {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer Note */
+        .footer-note {
+            background: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Mobile-specific optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header,
+            .services,
+            .booking-section {
+                padding: 20px 15px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .header .tagline {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
+        /* Animations */
+        .header, .services, .booking-section {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Touch-friendly improvements */
+        .service-item,
+        .whatsapp-btn,
+        .form-group input,
+        .form-group select {
+            min-height: 44px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <!-- LOGO CONTAINER - Ganti bagian ini dengan logo kamu -->
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <img src="logo.png" alt="Rejagone Haircut Logo" class="logo">
+                </div>
+                
+            </div>
+            
+            <p class="subtitle">Professional Barbershop & Men's Grooming</p>
+            <div class="tagline">
+                <div class="tag">Premium Quality</div>
+                <div class="tag">Expert Barbers</div>
+                <div class="tag">Modern Styling</div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services">
+            <h2>Our Services</h2>
+            
+            <div class="service-item">
+                <h3>Classic Haircut</h3>
+                <div class="price">Rp 150.000</div>
+                <p>Traditional men's haircut with professional styling</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Premium Haircut</h3>
+                <div class="price">Rp 250.000</div>
+                <p>Premium cut with detailed finishing and consultation</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Hair Styling</h3>
+                <div class="price">Rp 300.000</div>
+                <p>Modern styling with premium products and techniques</p>
+            </div>
+            
+            <div class="service-item">
+                <h3>Creambath Treatment</h3>
+                <div class="price">Rp 350.000</div>
+                <p>Relaxing hair and scalp treatment with premium care</p>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h4>Operating Hours</h4>
+                    <p>Monday - Sunday<br>09:00 AM - 09:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <h4>Professional Barbers</h4>
+                    <p>Rejancok & Rejancik<br>Experienced & Certified</p>
+                </div>
+                <div class="info-card">
+                    <h4>Payment Method</h4>
+                    <p>QRIS Payment Only<br>Fast & Secure Transaction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-section">
+            <h2>Book Your Appointment</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="nama">Full Name</label>
+                    <input type="text" id="nama" name="nama" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="08xxxxxxxxxx">
+                </div>
+
+                <div class="form-group">
+                    <label for="kapster">Choose Barber</label>
+                    <select id="kapster" name="kapster" required>
+                        <option value="">-- Select Barber --</option>
+                        <option value="Rejancok">Rejancok</option>
+                        <option value="Rejancik">Rejancik</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="layanan">Choose Service</label>
+                    <select id="layanan" name="layanan" required>
+                        <option value="">-- Select Service --</option>
+                        <option value="Classic Haircut - Rp 15.000">Classic Haircut - Rp 15.000</option>
+                        <option value="Premium Haircut - Rp 25.000">Premium Haircut - Rp 25.000</option>
+                        <option value="Hair Styling - Rp 30.000">Hair Styling - Rp 30.000</option>
+                        <option value="Creambath Treatment - Rp 35.000">Creambath Treatment - Rp 35.000</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tanggal">Date</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jam">Time</label>
+                        <select id="jam" name="jam" required>
+                            <option value="">-- Select Time --</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="catatan">Special Notes (Optional)</label>
+                    <textarea id="catatan" name="catatan" rows="3" placeholder="Any specific requests for your haircut..."></textarea>
+                </div>
+
+                <button type="submit" class="whatsapp-btn">
+                    Book via WhatsApp
+                </button>
+            </form>
+        </div>
+
+        <div class="footer-note">
+            <p><strong>Rejagone Haircut</strong> - Professional barbershop committed to delivering exceptional grooming services. Book your appointment today for a premium mobile experience.</p>
+        </div>
+    </div>
+
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('tanggal').setAttribute('min', today);
+
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Validate required fields
+            if (!data.nama || !data.whatsapp || !data.kapster || !data.layanan || !data.tanggal || !data.jam) {
+                alert('Please fill in all required fields!');
+                return;
+            }
+
+            // Format date
+            const tanggalObj = new Date(data.tanggal);
+            const tanggalFormatted = tanggalObj.toLocaleDateString('en-GB', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Generate WhatsApp message
+            let message = `Untuk sistem booking mohon lengkapi formulir pemesanan dulu ya brok, agar kami melayani Anda dengan baik sampe bikin sange💇🏻‍♂️
+
+Nama : ${data.nama}
+WhatsApp : ${data.whatsapp}
+Chapster : ${data.kapster}
+Layanan : ${data.layanan}
+Tanggal/Jam : ${tanggalFormatted}, ${data.jam}
+Pembayaran: Qris only`;
+
+            if (data.catatan) {
+                message += `\nCatatan : ${data.catatan}`;
+            }
+
+            message += `\n\nKami akan hubungi untuk konfirmasi dan info selanjutnya. 
+Sampai jumpa di barber rejagone!🤩`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Replace with your actual WhatsApp number (format: 62xxxxxxxxxx)
+            const phoneNumber = '6282283708583'; // Ganti dengan nomor WhatsApp admin
+            
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Touch-friendly hover effects for mobile
+        document.querySelectorAll('.service-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.borderColor = '#3498db';
+            });
+            
+            item.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = 'translateY(0)';
+                    this.style.borderColor = '#e9ecef';
+                }, 150);
+            });
+        });
+
+        // Prevent zoom on input focus (iOS)
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.fontSize = '16px';
+            });
+        });
+    </script>
+</body>
+</html>
